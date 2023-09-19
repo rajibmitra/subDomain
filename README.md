@@ -40,8 +40,10 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
    Fetch subdomains for xyz.com and write them to subdomains.txt:
    
    subdomains -u xyz.com -o txt
-   Contributing
+
+   **Contributing**
+
    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
    
-   License
+   **License**
    Licensed under the Apache 2 License.
