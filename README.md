@@ -3,14 +3,17 @@ Fetches subdomains for a given domain using the subdomain.center API.
 
 # Installation
 
-Prerequisites:
+## Prerequisites:
 Ensure you have Go installed (version 1.16 or newer). If not, download and install it from Go's official website.
 
 Steps:
+
 Clone the Repository:
 
 Copy code
+
 git clone https://github.com/YOUR_USERNAME/subdomains-cli.git
+
 cd subdomains-cli
 
 Build the Tool:
@@ -24,6 +27,7 @@ This command compiles the code and produces a binary named subdomains.
 If you want to use the tool from any directory, move the subdomains binary to a directory in your PATH or add the current directory to your PATH.
 
 Replace YOUR_USERNAME with your actual GitHub username (or the username of the repository owner if different). If the repository URL is different, make sure to update that as well.
+---------------------------
 
 subdomains [flags] [domain]
 Flags:
