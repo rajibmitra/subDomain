@@ -12,8 +12,8 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/subdomains-cli.git
-   cd subdomains-cli 
+   https://github.com/rajibmitra/subDomain.git
+   cd subdomains
 
 2. **Build the Tool**:
   ```bash
