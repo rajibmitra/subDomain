@@ -71,6 +71,9 @@ In essence, the combination of Go's design principles, its focus on concurrency,
    Fetch subdomains for xyz.com and write them to subdomains.txt:
    ./subdomains -u xyz.com -o txt
 
+   <img width="536" alt="image" src="https://github.com/rajibmitra/subDomain/assets/1690251/f56fbc99-40b7-4f04-a824-604fdcf23e10">
+
+
    **Contributing**
 
    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
