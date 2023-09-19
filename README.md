@@ -16,16 +16,14 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
    cd subDomain
 
 2. **Build the Tool**:
-   
-  go build -o subdomains .
+   go build -o subdomains .
 
    This command compiles the code and produces a binary named subdomains.
-   
+      
    (Optional) Add to PATH:
-   
    If you want to use the tool from any directory, move the subdomains binary to a directory in your PATH or add the current directory to your PATH.
 
-3. **Download from release**
+4. **Download from release**
    If you are unable to build the tool - goto https://github.com/rajibmitra/subDomain/releases/tag/1.0.0
    Download the binary as per your need, and use it. 
 
