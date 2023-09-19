@@ -13,7 +13,7 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/YOUR_USERNAME/subdomains-cli.git
-   cd subdomains-cli
+   cd subdomains-cli 
 
 2. **Build the Tool**:
   ```bash
@@ -36,8 +36,7 @@ Flags:
 Examples:
 Fetch subdomains for google.com and print them in the console:
 
-bash
-Copy code
+
 subdomains -u google.com
 Fetch subdomains for google.com and write them to subdomains.txt:
 
