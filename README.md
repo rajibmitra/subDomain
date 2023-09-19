@@ -46,6 +46,7 @@ In essence, the combination of Go's design principles, its focus on concurrency,
    cd subDomain
 
 2. **Build the Tool**:
+   ```bash
    go build -o subdomains .
 
    This command compiles the code and produces a binary named subdomains.
