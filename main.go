@@ -21,9 +21,33 @@ type Result struct {
 	Ports      map[string][]int
 }
 
-var wellKnownPorts = []int{80, 443, 3306, 5432, 27017, 6379, 11211}
+var wellKnownPorts = []int{
+	20,    // FTP data
+	21,    // FTP control
+	22,    // SSH
+	23,    // Telnet
+	25,    // SMTP
+	53,    // DNS
+	80,    // HTTP
+	110,   // POP3
+	143,   // IMAP
+	443,   // HTTPS
+	465,   // SMTPS
+	587,   // SMTP relay
+	993,   // IMAPS
+	995,   // POP3S
+	3306,  // MySQL
+	3389,  // RDP (Remote Desktop)
+	5432,  // PostgreSQL
+	27017, // MongoDB
+	6379,  // Redis
+	11211, // Memcached
+	8080,  // HTTP alternate (often used for proxies or web servers)
+	8443,  // HTTPS alternate (common for web applications using SSL)
+}
 
 func scanPorts(domain string, ch chan map[string][]int) {
+
 	var openPorts []int
 	const timeout = 500 * time.Millisecond
 
@@ -90,8 +114,8 @@ func fetchSubdomains(domain string, ch chan Result) {
 }
 
 func main() {
-	var domain string
 
+	var domain string
 	outputFormat := flag.String("o", "", "Output format (txt for text file)")
 	flag.StringVar(&domain, "u", "", "Domain to fetch subdomains for")
 	flag.Parse()
