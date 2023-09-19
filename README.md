@@ -14,6 +14,24 @@ SEO and Brand Monitoring: Brands can monitor subdomains to detect potential infr
 
 This CLI tool provides a fast and reliable way to fetch subdomains, aiding both in developmental operations and security assessments. Whether you're a website administrator, a developer, or a security expert, this tool is designed to make your life easier and your operations more secure.
 
+## Why this tool is better than others in market 
+
+At the core of the Subdomains CLI Tool's performance and efficiency is the Go programming language (often referred to as Golang). Here's a brief overview of how Go contributes to the tool's prowess:
+
+Concurrency with Goroutines: Go is inherently designed for concurrency. It uses 'goroutines', which are lightweight threads managed by the Go runtime. This means our tool can execute multiple tasks concurrently, such as making multiple API requests or processing multiple subdomains simultaneously, without the overhead of traditional heavyweight threads.
+
+Channels for Communication: Channels in Go provide a way for goroutines to communicate with each other and synchronize their execution. In the context of our tool, channels ensure that data (like subdomains) is seamlessly passed between different parts of the program and that all tasks complete as intended.
+
+Efficient Compilation: Go compiles to machine code. This means that the tool doesn't rely on an interpreter or a virtual machine, leading to faster execution times.
+
+Optimized for Networking: Go has a powerful standard library, especially for networking tasks. This ensures efficient and robust network calls when our tool queries the subdomain.center API.
+
+Memory Management: Go uses a garbage collector optimized for low-latency scenarios. This means our tool manages memory efficiently without manual intervention, ensuring that it remains performant even with large datasets.
+
+In essence, the combination of Go's design principles, its focus on concurrency, and its robust standard library means that the Subdomains CLI Tool can deliver results quickly and effectively, making it a preferred choice for those who need to fetch subdomains in real-time or at scale.
+
+
+
 ## Installation
 
 ### Prerequisites:
