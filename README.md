@@ -40,8 +40,6 @@ Fetch subdomains for google.com and print them in the console:
 subdomains -u google.com
 Fetch subdomains for google.com and write them to subdomains.txt:
 
-bash
-Copy code
 subdomains -u google.com -o txt
 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
