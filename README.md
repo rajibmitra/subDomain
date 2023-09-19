@@ -1,6 +1,18 @@
 # Subdomains CLI Tool
 
-A tool that fetches subdomains for a given domain using the subdomain.center API.
+Subdomains play a crucial role in the structure and navigation of websites. They can be indicative of different services, regions, or purposes under the umbrella of the main domain. However, from a cybersecurity perspective, each subdomain can also be a potential entry point for attackers. As applications grow in complexity, managing and keeping track of subdomains becomes increasingly challenging.
+
+The Subdomains CLI Tool is designed to simplify this process. By leveraging the power of the subdomain.center API, it provides a streamlined method to fetch and list subdomains associated with a primary domain. This is not only beneficial for developers and website administrators in managing their online assets but is also a vital tool for cybersecurity professionals. Here's why:
+
+Vulnerability Scanning: Before launching a penetration test, security experts often enumerate subdomains to identify potential weak points. The more subdomains they're aware of, the more comprehensive their tests can be.
+
+Phishing Detection: Malicious actors often create subdomains under legitimate-looking domains to deceive users. By regularly monitoring and understanding the subdomains associated with a primary domain, businesses can detect suspicious activity early.
+
+Asset Management: Large organizations with multiple online services can use this tool to maintain an inventory of their web assets, ensuring no subdomain goes unnoticed or unchecked.
+
+SEO and Brand Monitoring: Brands can monitor subdomains to detect potential infringements or misuse of their brand name in URLs.
+
+This CLI tool provides a fast and reliable way to fetch subdomains, aiding both in developmental operations and security assessments. Whether you're a website administrator, a developer, or a security expert, this tool is designed to make your life easier and your operations more secure.
 
 ## Installation
 
