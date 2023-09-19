@@ -47,10 +47,10 @@ This CLI tool provides a fast and reliable way to fetch subdomains, aiding both 
    Examples:
 
    Fetch subdomains for xyz.com and print them in the console:
-   subdomains -u xyz.com
+   ./subdomains -u xyz.com
    
    Fetch subdomains for xyz.com and write them to subdomains.txt:
-   subdomains -u xyz.com -o txt
+   ./subdomains -u xyz.com -o txt
 
    **Contributing**
 
