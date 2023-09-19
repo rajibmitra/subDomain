@@ -1,24 +1,23 @@
 # Subdomains CLI Tool
-Fetches subdomains for a given domain using the subdomain.center API.
 
-# Installation
+A tool that fetches subdomains for a given domain using the subdomain.center API.
 
-## Prerequisites:
-Ensure you have Go installed (version 1.16 or newer). If not, download and install it from Go's official website.
+## Installation
 
-Steps:
+### Prerequisites:
 
-Clone the Repository:
+- **Go**: Ensure you have Go installed (version 1.16 or newer). If not, you can download and install it from [Go's official website](https://golang.org/dl/).
 
-Copy code
+### Step-by-step Guide:
 
-git clone https://github.com/YOUR_USERNAME/subdomains-cli.git
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/subdomains-cli.git
+   cd subdomains-cli
 
-cd subdomains-cli
-
-Build the Tool:
-
-go build -o subdomains .
+2. **Build the Tool**:
+  ```bash
+  go build -o subdomains .
 
 This command compiles the code and produces a binary named subdomains.
 
@@ -26,8 +25,8 @@ This command compiles the code and produces a binary named subdomains.
 
 If you want to use the tool from any directory, move the subdomains binary to a directory in your PATH or add the current directory to your PATH.
 
-Replace YOUR_USERNAME with your actual GitHub username (or the username of the repository owner if different). If the repository URL is different, make sure to update that as well.
----------------------------
+Note: Replace YOUR_USERNAME with your actual GitHub username (or the username of the repository owner if different). If the repository URL is different, make sure to update that as well.
+
 
 subdomains [flags] [domain]
 Flags:
@@ -37,14 +36,16 @@ Flags:
 Examples:
 Fetch subdomains for google.com and print them in the console:
 
-
+bash
+Copy code
 subdomains -u google.com
 Fetch subdomains for google.com and write them to subdomains.txt:
 
+bash
+Copy code
 subdomains -u google.com -o txt
-
 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 License
-Apache 2 
+Licensed under the Apache 2 License.
