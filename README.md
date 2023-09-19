@@ -24,7 +24,7 @@ This CLI tool provides a fast and reliable way to fetch subdomains, aiding both 
 
 1. **Clone the Repository**:
    ```bash
-   https://github.com/rajibmitra/subDomain.git
+   git clone https://github.com/rajibmitra/subDomain.git
    cd subDomain
 
 2. **Build the Tool**:
