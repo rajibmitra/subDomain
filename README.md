@@ -16,7 +16,7 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
    cd subDomain
 
 2. **Build the Tool**:
-  ```bash
+   
   go build -o subdomains .
 
 This command compiles the code and produces a binary named subdomains.
@@ -24,8 +24,6 @@ This command compiles the code and produces a binary named subdomains.
 (Optional) Add to PATH:
 
 If you want to use the tool from any directory, move the subdomains binary to a directory in your PATH or add the current directory to your PATH.
-
-Note: Replace YOUR_USERNAME with your actual GitHub username (or the username of the repository owner if different). If the repository URL is different, make sure to update that as well.
 
 
 subdomains [flags] [domain]
