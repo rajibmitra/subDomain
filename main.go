@@ -6,9 +6,11 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"strings"
+	"time"
 )
 
 const baseURL = "https://api.subdomain.center/?domain="
@@ -16,6 +18,24 @@ const baseURL = "https://api.subdomain.center/?domain="
 type Result struct {
 	Subdomains []string
 	Error      error
+	Ports      map[string][]int
+}
+
+var wellKnownPorts = []int{80, 443, 3306, 5432, 27017, 6379, 11211}
+
+func scanPorts(domain string, ch chan map[string][]int) {
+	var openPorts []int
+	const timeout = 500 * time.Millisecond
+
+	for _, port := range wellKnownPorts {
+		address := fmt.Sprintf("%s:%d", domain, port)
+		conn, err := net.DialTimeout("tcp", address, timeout)
+		if err == nil {
+			openPorts = append(openPorts, port)
+			conn.Close()
+		}
+	}
+	ch <- map[string][]int{domain: openPorts}
 }
 
 func fetchSubdomains(domain string, ch chan Result) {
@@ -47,15 +67,31 @@ func fetchSubdomains(domain string, ch chan Result) {
 	}
 
 	if len(subdomains) == 0 {
-		ch <- Result{Error: fmt.Errorf("No subdomains found for %v", domain)}
+		ch <- Result{Error: fmt.Errorf("no subdomains found for %v", domain)}
 		return
 	}
+	portsMapping := make(map[string][]int)
+	portCh := make(chan map[string][]int)
 
-	ch <- Result{Subdomains: subdomains}
+	for _, subdomain := range subdomains {
+		go scanPorts(subdomain, portCh)
+	}
+
+	for range subdomains {
+		portData := <-portCh
+		for k, v := range portData {
+			if len(v) > 0 {
+				portsMapping[k] = v
+			}
+		}
+	}
+
+	ch <- Result{Subdomains: subdomains, Ports: portsMapping}
 }
 
 func main() {
 	var domain string
+
 	outputFormat := flag.String("o", "", "Output format (txt for text file)")
 	flag.StringVar(&domain, "u", "", "Domain to fetch subdomains for")
 	flag.Parse()
@@ -75,15 +111,27 @@ func main() {
 	}
 
 	if *outputFormat == "txt" {
-		content := strings.Join(result.Subdomains, "\n")
-		err := os.WriteFile("subdomains.txt", []byte(content), 0644)
+		var content strings.Builder
+		for subdomain, ports := range result.Ports {
+			if len(ports) > 0 {
+				content.WriteString(fmt.Sprintf("%s: %v\n", subdomain, ports))
+			} else {
+				content.WriteString(fmt.Sprintf("%s\n", subdomain))
+			}
+		}
+		err := os.WriteFile("subdomains.txt", []byte(content.String()), 0644)
 		if err != nil {
 			log.Fatalf("Error writing to file: %v", err)
 		}
 		fmt.Println("Subdomains written to subdomains.txt")
 	} else {
-		for _, subdomain := range result.Subdomains {
-			fmt.Println(subdomain)
+		for subdomain, ports := range result.Ports {
+			if len(ports) > 0 {
+				fmt.Printf("%s: %v\n", subdomain, ports)
+			} else {
+				fmt.Println(subdomain)
+			}
 		}
 	}
+
 }
