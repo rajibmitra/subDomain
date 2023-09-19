@@ -6,14 +6,14 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
 
 ### Prerequisites:
 
-- **Go**: Ensure you have Go installed (version 1.16 or newer). If not, you can download and install it from [Go's official website](https://golang.org/dl/).
+- **Go**: Ensure you have Go installed. If not, you can download and install it from [Go's official website](https://golang.org/dl/).
 
 ### Step-by-step Guide:
 
 1. **Clone the Repository**:
    ```bash
    https://github.com/rajibmitra/subDomain.git
-   cd subdomains
+   cd subDomain
 
 2. **Build the Tool**:
   ```bash
@@ -34,10 +34,10 @@ Flags:
 -o, --output: Output format. Currently, only "txt" is supported, which writes the subdomains to a file named subdomains.txt.
 
 Examples:
-Fetch subdomains for google.com and print them in the console:
+Fetch subdomains for x.com and print them in the console:
 
 
-subdomains -u google.com
+subdomains -u x.com
 Fetch subdomains for google.com and write them to subdomains.txt:
 
 subdomains -u google.com -o txt
