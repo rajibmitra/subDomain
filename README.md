@@ -33,12 +33,11 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
    -o, --output: Output format. Currently, only "txt" is supported, which writes the subdomains to a file named subdomains.txt.
    
    Examples:
+
    Fetch subdomains for xyz.com and print them in the console:
-   
-   
    subdomains -u xyz.com
-   Fetch subdomains for xyz.com and write them to subdomains.txt:
    
+   Fetch subdomains for xyz.com and write them to subdomains.txt:
    subdomains -u xyz.com -o txt
 
    **Contributing**
@@ -46,4 +45,5 @@ A tool that fetches subdomains for a given domain using the subdomain.center API
    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
    
    **License**
+
    Licensed under the Apache 2 License.
